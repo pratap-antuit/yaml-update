@@ -25,6 +25,7 @@ async function run(): Promise<void> {
     const inputs: any = core.getInput('data')
     core.info(`action input ${inputs} ...`)
     for (const k in inputs) {
+      core.info(`action input ${k} ...`)
       const filePath = path.join(process.cwd(), k)
       const yaml_data = yaml.load(fs.readFileSync(filePath, 'utf8'))
       const jsonObject = JSON.stringify(yaml_data, null, 4)
