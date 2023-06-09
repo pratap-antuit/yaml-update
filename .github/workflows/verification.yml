@@ -52,17 +52,12 @@ jobs:
         uses: ./
         with:
           data: |
-              { 
-                "grafana.yaml":
-                {
-                  {
-                    'grafana.ini': 
-                      { 
-                        server: 
-                          { 
-                            root_url: 'sss'
-                          } 
-                      }
+              {
+                'grafana.yaml': {
+                  'grafana.ini': {
+                    server: {
+                      root_url: 'sss'
+                    }
                   }
                 }
-                }
+              }
