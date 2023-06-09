@@ -40,5 +40,3 @@ export async function run(options: Options): Promise<void> {
     }
   }
 }
-
-run()
