@@ -23,10 +23,8 @@ function loopThroughObjRecurs(obj: any, parseObject: any) {
 
 export async function run(options: Options): Promise<void> {
   try {
-    const inputs: any = options.changes
-    core.info(`action input ${inputs} ...`)
-    core.info(`aaaaaaaaaaaaaaaaa ${Object.entries(inputs)}`)
-    for (const [file, values] of Object.entries(inputs)) {
+    core.info(`aaaaaaaaaaaaaaaaa ${Object.entries(options.changes)}`)
+    for (const [file, values] of Object.entries(options.changes)) {
       core.info(`action inputsssssssss ${file} ... ${values}`)
       const filePath = path.join(process.cwd(), file)
       const yaml_data = yaml.load(fs.readFileSync(filePath, 'utf8'))
