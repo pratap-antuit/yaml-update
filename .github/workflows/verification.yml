@@ -54,6 +54,10 @@ jobs:
           changes: |
               {
                 "grafana.yaml": {
-                  "backend.version": "v1.0.1"
+                  "grafana.ini": {
+                    "server": {
+                      "root_url": "sssssssssssssssss"
+                    }
+                  }
                 }
               }
