@@ -53,13 +53,7 @@ jobs:
         with:
           changes: |
               {
-                "__tests__/fixtures/values.dev.yaml": {
-                  "backend.version": "v1.0.1"
-                },
-                "__tests__/fixtures/values.stage.yaml": {
-                  "backend.version": "v1.0.1"
-                },
-                "__tests__/fixtures/values.prod.yaml": {
+                "grafana.yaml": {
                   "backend.version": "v1.0.1"
                 }
               }
