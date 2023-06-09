@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Update YAML content based on the github input",
-  "main": "src/main.ts",
+  "main": "src/index.ts",
   "scripts": {
     "lint": "eslint '**/*.ts' --cache --fix",
     "test": "jest",
-    "build": "rimraf dist && esbuild src/main.ts --outfile=dist/main.js --bundle --platform=node --target=node16 --minify --sourcemap && yarn cpy 'dist-reuse/*' dist",
+    "build": "rimraf dist && esbuild src/index.ts --outfile=dist/index.js --bundle --platform=node --target=node16 --minify --sourcemap && yarn cpy 'dist-reuse/*' dist",
     "dev": "yarn test && yarn build && act -j test-run --secret-file .secrets"
   },
   "repository": {
