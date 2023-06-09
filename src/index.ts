@@ -22,15 +22,7 @@ function loopThroughObjRecurs(obj: any, parseObject: any) {
 
 async function run(): Promise<void> {
   try {
-    const inputs: any = {
-      'grafana.yaml': {
-        'grafana.ini': {
-          server: {
-            root_url: 'sss'
-          }
-        }
-      }
-    }
+    const inputs: any = core.getInput('data')
     core.info(`action input ${inputs} ...`)
     // for (const k in inputs) {
     for (const [file, values] of Object.entries(inputs)) {
