@@ -52,12 +52,14 @@ jobs:
         uses: ./
         with:
           changes: |
-              {
-                'grafana.yaml': {
-                  'grafana.ini': {
-                    server: {
-                      root_url: 'sss'
-                    }
-                  }
-                }
+            {
+              "__tests__/fixtures/values.dev.yaml": {
+                "backend.version": "v1.0.1"
+              },
+              "__tests__/fixtures/values.stage.yaml": {
+                "backend.version": "v1.0.1"
+              },
+              "__tests__/fixtures/values.prod.yaml": {
+                "backend.version": "v1.0.1"
               }
+            }
