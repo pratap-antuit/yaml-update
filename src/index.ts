@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import yaml from 'js-yaml'
 import fs from 'fs'
+import path from 'path'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function writeTo(content: any, k: any, filePath) {
