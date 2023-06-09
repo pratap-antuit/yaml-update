@@ -2,7 +2,7 @@ name: 'Update YAML Using github inputs'
 description: 'Update YAML content based on the github input'
 author: 'pratap.patil@zebra.com'
 inputs:
-  changes: # change this
+  data: # change this
     required: true
     description: 'input description here'
 runs:

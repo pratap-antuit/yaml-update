@@ -21,9 +21,9 @@ function loopThroughObjRecurs(obj: any, parseObject: any) {
   }
 }
 
-async function run(options: Options): Promise<void> {
+export async function run(options: Options): Promise<void> {
   try {
-    const inputs: any = options
+    const inputs: any = options.changes
     core.info(`action input ${inputs} ...`)
     core.info(`aaaaaaaaaaaaaaaaa ${Object.entries(inputs)}`)
     for (const [file, values] of Object.entries(inputs)) {
