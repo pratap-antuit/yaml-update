@@ -24,7 +24,7 @@ async function run(): Promise<void> {
   try {
     const inputs: any = core.getInput('data')
     core.info(`action input ${inputs} ...`)
-    // for (const k in inputs) {
+    core.info(`aaaaaaaaaaaaaaaaa ${Object.entries(inputs)}`)
     for (const [file, values] of Object.entries(inputs)) {
       core.info(`action inputsssssssss ${file} ... ${values}`)
       const filePath = path.join(process.cwd(), file)
