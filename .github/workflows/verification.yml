@@ -51,4 +51,5 @@ jobs:
       - name: Run
         uses: ./
         with:
-          milliseconds: 500
+          data:  |
+              { "grafana.yaml": {                 {'grafana.ini': { server: { root_url: 'sss' } }}}}
