@@ -51,5 +51,18 @@ jobs:
       - name: Run
         uses: ./
         with:
-          data:  |
-              { "grafana.yaml": {                 {'grafana.ini': { server: { root_url: 'sss' } }}}}
+          data: |
+              { 
+                "grafana.yaml":
+                {
+                  {
+                    'grafana.ini': 
+                      { 
+                        server: 
+                          { 
+                            root_url: 'sss'
+                          } 
+                      }
+                  }
+                }
+                }
