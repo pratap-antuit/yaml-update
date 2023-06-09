@@ -11,4 +11,4 @@ grafana.ini:
   grafana_net:
     url: https://grafana.net
   server:
-    root_url:
+    root_url: sss
