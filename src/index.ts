@@ -3,7 +3,7 @@ import yaml from 'js-yaml'
 import fs from 'fs'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-function writeTo(content: any, filePath: any) {
+function writeTo(content: any, k: any, filePath) {
   const yamlString = yaml.dump(content)
   fs.writeFileSync(filePath, yamlString, 'utf8')
 }
@@ -24,12 +24,13 @@ async function run(): Promise<void> {
     const inputs: any = core.getInput('data')
     core.info(`action input ${inputs} ...`)
     for (const k in inputs) {
-      const yaml_data = yaml.load(fs.readFileSync(k, 'utf8'))
+      const filePath = path.join(process.cwd(), k)
+      const yaml_data = yaml.load(fs.readFileSync(filePath, 'utf8'))
       const jsonObject = JSON.stringify(yaml_data, null, 4)
       const parseObject = JSON.parse(jsonObject)
 
       loopThroughObjRecurs(inputs[k], parseObject)
-      writeTo(parseObject, k)
+      writeTo(parseObject, k, filePath)
     }
   } catch (error) {
     if (error instanceof Error) {
