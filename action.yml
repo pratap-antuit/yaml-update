@@ -1,4 +1,4 @@
-name: 'Runtime Update YAML'
+name: 'Update YAML Using github inputs'
 description: 'Update YAML content based on the github input'
 author: 'pratap.patil@zebra.com'
 inputs:
