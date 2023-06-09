@@ -2,6 +2,7 @@ import * as core from '@actions/core'
 import yaml from 'js-yaml'
 import fs from 'fs'
 import path from 'path'
+import type { Options } from './options'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function writeTo(content: any, k: any, filePath: any) {
@@ -20,9 +21,9 @@ function loopThroughObjRecurs(obj: any, parseObject: any) {
   }
 }
 
-async function run(): Promise<void> {
+async function run(options: Options): Promise<void> {
   try {
-    const inputs: any = core.getInput('data')
+    const inputs: any = options.data
     core.info(`action input ${inputs} ...`)
     core.info(`aaaaaaaaaaaaaaaaa ${Object.entries(inputs)}`)
     for (const [file, values] of Object.entries(inputs)) {
